@@ -54,7 +54,7 @@
 **Modbus RTU/TCP**
 - RoastPro, Easyster, Proaster THCR, TRINITAS, Toper, Has Garanti, Santoker, Kaleido, KAMEL
 
-**Siemens S7 PLC**
+**Siemens S7 PLC** *(실제 검증 전)*
 - Giesen (WxA 시리즈), Bühler, Probat G/UG, Petroncini, Kirsch+Mausser, Kuban, Lilla, Brambati
 
 **WebSocket (신규)**
