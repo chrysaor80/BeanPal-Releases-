@@ -126,8 +126,8 @@
 
 - **웹사이트**: https://beanpal.kr
 - **이메일**: chrysaor80@naver.com
-- **GitHub Issues**: [버그 리포트](https://github.com/chrysaor80/BeanPal/issues)
-- **GitHub Discussions**: [질문/제안](https://github.com/chrysaor80/BeanPal/discussions)
+- **GitHub Issues**: [버그 리포트](https://github.com/chrysaor80/BeanPal-Releases-/issues)
+- **GitHub Discussions**: [질문/제안](https://github.com/chrysaor80/BeanPal-Releases-/discussions)
 
 ---
 
