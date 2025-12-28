@@ -1,16 +1,6 @@
-# BeanPal v1.8.9
+# BeanPal
 
 **무료 AI 로스팅 소프트웨어** - AI 온도 예측까지 무료로.
-
----
-
-## v1.8.9 신규 기능
-
-### Probat PIII WebSocket 연동
-- Probat PIII 시리즈 실시간 WebSocket 통신 지원
-- 센서 데이터 자동 수신 (Bean/Air/배기 온도, 버너, 드럼 속도)
-- 로스팅 이벤트 자동 감지 (CHARGE, DROP, DRY, 1차/2차 크랙)
-- **지원 모델**: P01, P05 III, P12 III, P25 III, P60 III (2020년~)
 
 ---
 
