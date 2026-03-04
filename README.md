@@ -1,234 +1,112 @@
-# BeanPal - 무료 로스팅 데이터 로거 소프트웨어
+# BeanPal — Free Coffee Roasting Software
 
-**사용자 사용 패턴 학습 및 활용 기능까지 무료로.**
+[![Total Downloads](https://img.shields.io/github/downloads/chrysaor80/BeanPal-Releases-/total?style=flat-square&label=Total%20Downloads&color=4a90d9)](https://github.com/chrysaor80/BeanPal-Releases-/releases)
+[![Latest Release](https://img.shields.io/github/v/release/chrysaor80/BeanPal-Releases-?style=flat-square&label=Latest&color=2ea44f)](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-10%2F11-blue?style=flat-square&logo=windows)](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest)
+[![macOS](https://img.shields.io/badge/macOS-11%2B-black?style=flat-square&logo=apple)](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest)
 
-> ⚠️ 본 소프트웨어 사용 전 하단의 [안전 경고 및 면책 조항](#️-중요-안전-경고-및-면책-조항)을 반드시 읽어주세요.
+BeanPal은 커피 로스터를 위한 **무료** 로스팅 모니터링 & 제어 소프트웨어입니다.
+
+---
+
+## 📥 다운로드
+
+| 플랫폼               | 파일                                                                                                           |
+| -------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Windows** (10/11 x64)  | [BeanPal_2.3.2_x64-setup.exe](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest)            |
+| **macOS** (Intel + Apple Silicon) | [BeanPal_2.3.2_universal.dmg](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
+
+→ 전체 릴리즈 이력: [Releases 페이지](https://github.com/chrysaor80/BeanPal-Releases-/releases)
+
+---
+
+## ⚠️ macOS 처음 실행 시 — Gatekeeper 경고 해결
+
+앱을 처음 열면 **"Apple에서 악성 소프트웨어가 있는지 확인할 수 없습니다"** 경고가 나타날 수 있습니다.
+
+BeanPal은 Apple Developer ID로 정식 서명된 앱이지만, 첫 공증 처리 완료 전까지 이 경고가 표시됩니다. **아래 방법 중 하나로 한 번만 해제하면** 이후에는 정상 실행됩니다.
+
+### 방법 1 — 터미널 (가장 확실)
+
+```bash
+xattr -cr /Applications/BeanPal.app
+open /Applications/BeanPal.app
+```
+
+> 아무 메시지도 나타나지 않으면 성공입니다.
+
+상황에 따른 명령 변형:
+
+| 상황 | 명령 |
+| ---- | ---- |
+| Downloads 폴더에 있을 때 | `xattr -cr ~/Downloads/BeanPal.app` |
+| 권한 오류(operation not permitted)가 날 때 | `sudo xattr -cr /Applications/BeanPal.app` |
+
+### 방법 2 — 우클릭으로 열기
+
+1. Finder → 응용 프로그램에서 BeanPal 찾기
+2. 우클릭 → "열기" 선택 → 경고창에서 "열기" 클릭
+
+### 방법 3 — 시스템 설정
+
+1. BeanPal 더블 클릭 (경고 발생)
+2. 시스템 설정 → 개인정보 보호 및 보안 → "그래도 열기"
+
+> **왜 이런 경고가 나타나나요?** BeanPal은 Apple Developer ID로 서명된 안전한 앱입니다. Apple 공증(Notarization) 심사가 완료되기까지 며칠 소요되며, 그 사이 macOS가 임시로 차단합니다. 공증 완료 후 배포되는 버전부터는 이 경고 없이 바로 실행됩니다.
 
 ---
 
 ## 주요 기능
 
-### 실시간 로스팅 모니터링
-- 온도(Bean/Air/배기/추가), RoR 실시간 그래프 표시
-- 인버터 Hz, 댐퍼 %, 압력 등 제어값 모니터링
-- 크랙 포인트, 페이즈 자동 감지
-
-### TensorFlow 패턴 학습
-- 로스팅 데이터 기반 온도 추세 예측
-- 개인화된 로스팅 패턴 학습
-- 학습량에 따른 예측 정확도 향상
-- 학습 진행률 및 상태 확인
-- exhaustTemp(temp3), extraTemp(temp4) 피처 지원
-
-### 로스팅 오토파일럿
-- 이벤트/온도/시간/RoR 기반 자동 제어
-- 레시피 단계별 순차 실행
-- 가스/배기/드럼/댐퍼 슬라이더 자동 조작
-
-### 로스터기 예열 기능
-- 로스팅 전 목표 온도까지 자동 예열
-- PID 제어를 통한 정밀한 온도 유지
-- 평형점(최적 가스값) 자동 탐색
-
-### S7 PLC 슬라이더 제어
-- Giesen 등 S7 PLC 로스터기 서보/인버터 슬라이더 실시간 제어
-- 프론트엔드 슬라이더 → 백엔드 → S7 PLC 양방향 통신
-
-### Probat PIII WebSocket 연동
-- Probat PIII 시리즈 실시간 WebSocket 통신
-- 센서 데이터 자동 수신 (Bean/Air/배기 온도, 버너, 드럼 속도)
-- 로스팅 이벤트 자동 감지 (CHARGE, DROP, DRY, 1차/2차 크랙)
-
-### 커뮤니티 기능
-- 이슈 트래커: 버그 리포트 및 추적
-- 디스커션: 기능 제안 및 투표
-- Q&A: 질의응답 및 베스트 답변
-- 게시판 & 갤러리: 자유 게시글 및 로스팅 사진 공유
-
-### 프로필 관리 및 비교 (최대 10개)
-- 한 화면에서 최대 10개 프로필 동시 비교
-- 각 프로필마다 색상 자동 구분
-- 참조 프로필 오버레이 기능
-
-### 생두/블렌드/재고 관리
-- 원산지, 품종, 가공법, 등급 등 상세 정보 등록
-- 블렌드 레시피 저장 및 관리
-- 로스팅 시 재고 자동 차감
-
-### 다국어 지원
-- 한국어 / English 지원
-- i18n 기반 다국어 시스템
+- **실시간 로스팅 모니터링** — BT/ET/배기 온도, RoR 그래프, 크랙 자동 감지
+- **하드웨어 제어** — 가스/풍량/드럼 슬라이더, 인버터·서보 직접 제어
+- **오토파일럿** — 프로파일 기반 완전 자동 로스팅
+- **예열 자동화** — PID 제어로 목표 온도까지 자동 예열
+- **AI 온도 예측** — TensorFlow 기반 다음 30초 온도 상승률 예측
+- **프로파일 관리** — 로스팅 기록 저장/불러오기/비교 오버레이
+- **생두 재고 관리** — 입고·출고·블렌딩 레시피 추적
+- **커뮤니티** — 프로파일 공유, 버그 리포트, 토론 게시판
 
 ---
 
-## 지원 로스터기
+## 지원 로스터 (270개 프리셋, 90개 브랜드)
 
-### Modbus RTU/TCP 로스터기
-- RoastPro (로스트프로) - 500/1K 2온도
-- Easyster (이지스터) - 2온도/3온도
-- Proaster (프로스터) THCR - 2온도/3온도
-- TRINITAS (트리니타스) T2/T7 - 2온도/4온도
-- Toper (토퍼) - 2온도/3온도
-- Has Garanti (하스가란티) - 2온도/3온도
-- Santoker (산토커) - 2온도/3온도
-- Kaleido (칼레이도) - Serial 9600/57600
-- Kaleido Sniper M1/M2 Pro - Serial 57600
-- KAMEL (카멜) - 오토닉스 온도계
-
-### Siemens S7 PLC 로스터기 *(실제 검증 전)*
-- Giesen (기센) - WxA, WxA+, WxA IR 등 7종
-- Bühler (뷸러) - RM 20/60-240 등 4종
-- Probat (프로밧) - G/UG 등 2종
-- Petroncini (페트론치니) - TT Maestro 등 3종
-- Kirsch+Mausser (키르쉬+마우서) - PLC 등 2종
-- Kuban (쿠반) - Supreme Automatic 1종
-- Lilla (릴라) - PLC 1종
-- Brambati (브람바티) - PLC 1종
-
-### WebSocket 로스터기
-- Probat PIII (프로밧 P3) - P01, P05 III, P12 III, P25 III, P60 III (2020년~)
-
-### USB 센서
-- Phidget USB 온도센서 - TMP1101/TMP1100/1048/1051
-
-### 시리얼 온도계
-- CENTER 306 - 2채널 K타입 온도계
-- CENTER 305 - 2채널 K타입 온도계 (306 호환)
-- VOLTCRAFT K202 - 2채널 K타입 온도계 (306 호환)
-- Kaldi Fortis + CENTER 306 전용 프리셋
-
-### 기타
-- 커스텀 설정 (직접 구성 가능)
-
-> Modbus RTU/TCP, Siemens S7 PLC, WebSocket 지원 로스터기는 대부분 연동 가능합니다.
-> Phidget USB 온도센서도 지원합니다 (USB HID 방식).
+| 프로토콜    | 대표 브랜드                                              |
+| ----------- | -------------------------------------------------------- |
+| Modbus RTU  | Proaster, Easyster, Diedrich, Kaldi, 부자로스터 외 50+  |
+| Modbus TCP  | iRm, Sweet Coffee, Besca, Coffed, Atilla 외             |
+| S7 PLC      | Giesen (22개 모델), Probat G/UG                         |
+| WebSocket   | Probat PIII (P05/P12/P25/P60)                           |
+| Kaleido     | Sniper M1, M2 Pro, M6/M10                               |
+| IKAWA BLE   | HOME, PRO, PRO X                                        |
+| USB HID     | Aillio Bullet R1 V2                                     |
+| Hottop      | 2K+, KN-8828B-2K                                       |
+| Behmor      | 1kg, Jake, 1600 Plus                                    |
+| Phidget     | TMP1101, TMP1100, 1048, 1051                            |
 
 ---
 
 ## 시스템 요구사항
 
-- **OS**: Windows 10/11 (64-bit)
-- **RAM**: 4GB 이상 권장
-- **저장공간**: 1GB 이상
-- **로스터기 연결**:
-  - USB (Modbus RTU)
-  - 네트워크 (Modbus TCP)
-  - Siemens S7 PLC (TCP/IP 포트 102)
-  - WebSocket (Probat PIII 시리즈)
+|            | Windows                | macOS                       |
+| ---------- | ---------------------- | --------------------------- |
+| OS         | Windows 10/11 (64-bit) | macOS 11 Big Sur 이상       |
+| RAM        | 4GB 이상               | 4GB 이상                    |
+| 저장공간   | 500MB                  | 500MB                       |
+| 아키텍처   | x64                    | Intel + Apple Silicon (Universal) |
 
 ---
 
-## 기술 스택
+## 안전 주의사항
 
-- Frontend: React 18 + Tauri 2.0
-- Backend: Python FastAPI
-- AI: TensorFlow.js
-- 통신: Modbus RTU/TCP, Siemens S7 PLC (snap7), WebSocket (Probat PIII)
-- 커뮤니티: FastAPI + SQLite + JWT 인증
-- 다국어: i18next (한국어/영어)
+> BeanPal은 **"있는 그대로(AS-IS)"** 제공되는 무료 소프트웨어입니다.
+> 오토파일럿 사용 중에도 **반드시 로스터를 직접 모니터링**하세요.
+> 소프트웨어 사용 중 발생하는 장비 오작동, 화재, 데이터 손실에 대해 개발팀은 책임을 지지 않습니다.
 
 ---
 
-## 튜닝 서비스
+## 문의
 
-| 패키지 | 가격 | 내용 |
-|--------|------|------|
-| **Auto** | ~~100만원~~ **50만원** | Pro + 자동 로스팅 세팅 + 밸브 제어 서비스 포함 |
-
-> **Auto 패키지 50% 할인 이벤트** (2026년 5월까지)
-
-### 출장 지역 안내
-- **기준 지역**: 성남시
-- 성남시 기준 **50km 이내**: 출장비 무료
-- 성남시 기준 **50km 초과**: 별도 출장비 추가
-
-> **참고**: 튜닝에 필요한 디바이스(인버터, 압력계 등)는 직접 구매하셔야 합니다.
-
----
-
-## 피드백 & 문의
-
-### 앱 내 커뮤니티 (권장)
-- **버그 리포트**: 커뮤니티 → 이슈 트래커
-- **기능 제안**: 커뮤니티 → 디스커션
-- **질문/도움말**: 커뮤니티 → 질의응답
-
-### 외부 채널
-- **GitHub**: [Issues](https://github.com/chrysaor80/BeanPal-Releases-/issues)
-- **이메일**: admin@beanpal.kr
-- **웹사이트**: https://beanpal.kr
-
----
-
-*피드백 주시면 최대한 반영하겠습니다.*
-
----
-
-## ⚠️ 중요 안전 경고 및 면책 조항
-
-### 소프트웨어 보증 면책
-
-**본 소프트웨어는 "있는 그대로(AS IS)" 제공되며, 명시적이든 묵시적이든 어떠한 종류의 보증도 제공하지 않습니다.** 상품성, 특정 목적에의 적합성, 권리 비침해에 대한 묵시적 보증을 포함하되 이에 국한되지 않는 모든 보증을 명시적으로 부인합니다.
-
-소프트웨어가 사용자의 요구사항을 충족하거나, 중단 없이 작동하거나, 의도한 결과를 달성하거나, 다른 소프트웨어/시스템과 호환되거나, 안전하고 정확하며 오류가 없을 것이라는 어떠한 보증도 하지 않습니다.
-
-### 책임 제한
-
-**개발자 및 관련 당사자는 본 소프트웨어의 사용 또는 사용 불능으로 인해 발생하는 어떠한 손해에 대해서도 책임을 지지 않습니다.** 여기에는 다음이 포함되나 이에 국한되지 않습니다:
-- 결과적, 부수적, 간접적, 특별, 징벌적 손해
-- 장비 손상, 화재, 재산 피해
-- 사업 손실, 이익 손실, 데이터 손실
-- 로스터기 보증 상실
-
-### 화재 및 장비 안전 경고
-
-**커피 로스팅은 본질적으로 화재 위험이 있는 작업입니다.**
-
-1. **절대로 로스팅 중인 로스터기를 무인 상태로 방치하지 마십시오**
-   - 소프트웨어는 안전하지 않은 온도를 모니터링하지 않습니다
-   - 자동 로스팅/오토파일럿 기능 사용 시에도 항상 로스터기 옆에 있어야 합니다
-
-2. **장비 손상 및 화재 위험**
-   - 채프(chaff) 누적, 온도 이탈, 전기/가스 시스템 오류로 화재가 발생할 수 있습니다
-   - 정기적인 청소와 유지보수는 사용자의 책임입니다
-   - 260°C 이상에서 커피콩이 탄화되어 발화할 수 있습니다
-
-3. **소화 장비 필수**
-   - 로스팅 공간에 항상 소화기를 비치하십시오
-   - 화재 발생 시 대응 계획을 수립해 두십시오
-
-### 하드웨어 연동 경고
-
-**하드웨어(로스터기, 센서, 인버터, 서보모터 등) 연결 및 제어는 전적으로 사용자의 책임입니다.**
-
-1. **하드웨어 설치**
-   - 하드웨어 설치에 대해 개발자는 조언을 제공하지 않습니다
-   - 안전한 설치를 위해 반드시 **자격을 갖춘 기술자**와 상담하십시오
-
-2. **장비 제어 위험**
-   - Modbus RTU/TCP, Siemens S7 PLC, WebSocket 등을 통한 장비 제어는 사용자 책임입니다
-   - 잘못된 설정이나 소프트웨어 오류로 인한 장비 손상에 대해 책임지지 않습니다
-
-3. **보증 상실 가능성**
-   - 타사 소프트웨어 연동으로 인해 로스터기 제조사 보증이 무효화될 수 있습니다
-   - 연동 전 로스터기 제조사에 확인하시기 바랍니다
-
-### Siemens S7 PLC 로스터기 특별 경고
-
-**S7 PLC 연동 기능은 현재 베타 상태입니다.**
-
-| 상태 | 설명 |
-|------|------|
-| ✅ 작동 확인 | 수동 로스팅 (온도 읽기, 수동 슬라이더 제어) |
-| ⚠️ 미검증 | 자동 로스팅, 오토파일럿, 예열 기능 |
-| ❌ 미지원 | 일부 제조사별 특수 기능 |
-
-- S7 PLC 프리셋(Giesen, Bühler, Probat 등)은 **실제 장비에서 완전히 검증되지 않았습니다**
-- 해당 로스터기에 준비된 프리셋으로 설정하여 접속 후 온도 정보가 보이지 않을 경우 절대 사용해서는 안됩니다. 반드시 프로그램을 종료해 주세요
-- 문제 발생 시 즉시 로스터기의 물리적 비상 정지 버튼을 사용하십시오
-
-### 사용자 동의
-
-**본 소프트웨어를 설치하거나 사용함으로써, 사용자는 위의 모든 경고와 면책 조항을 읽고 이해했으며 이에 동의하는 것으로 간주됩니다.**
-
-모든 위험은 사용자가 부담하며, 본 소프트웨어 사용으로 인해 발생할 수 있는 모든 손해에 대한 책임을 사용자가 집니다.
+- **이메일**: [admin@beanpal.kr](mailto:admin@beanpal.kr)
+- **웹사이트**: [https://beanpal.kr](https://beanpal.kr)
+- **Issues**: [버그 신고 / 기능 제안](https://github.com/chrysaor80/BeanPal-Releases-/issues)
