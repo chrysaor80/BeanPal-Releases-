@@ -1,0 +1,25 @@
+name: Update README on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update download filenames in README
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          sed -i "s/BeanPal_[0-9]\+\.[0-9]\+\.[0-9]\+_x64-setup\.exe/BeanPal_${VERSION}_x64-setup.exe/g" README.md
+          sed -i "s/BeanPal_[0-9]\+\.[0-9]\+\.[0-9]\+_universal\.dmg/BeanPal_${VERSION}_universal.dmg/g" README.md
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md || (git add README.md && git commit -m "docs: README 다운로드 파일명 v${VERSION} 자동 갱신" && git push)
