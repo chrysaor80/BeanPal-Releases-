@@ -11,13 +11,13 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-
+        with:
+          ref: main
       - name: Update download filenames in README
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           sed -i "s/BeanPal_[0-9]\+\.[0-9]\+\.[0-9]\+_x64-setup\.exe/BeanPal_${VERSION}_x64-setup.exe/g" README.md
           sed -i "s/BeanPal_[0-9]\+\.[0-9]\+\.[0-9]\+_universal\.dmg/BeanPal_${VERSION}_universal.dmg/g" README.md
-
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
