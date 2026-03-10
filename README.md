@@ -37,15 +37,16 @@ BeanPal은 커피 로스터를 위한 **무료** 로스팅 모니터링 & 제어
 
 | 영상 | 링크 |
 | ---- | ---- |
-| BeanPal 메인 UI 소개 | [▶ 보기](https://youtu.be/TcSkfuXXMFk) |
-| 시리얼 통신 및 하드웨어 제어 | [▶ 보기](https://youtu.be/yoZY0zxGq9U) |
-| 블렌딩 설정 및 관리 | [▶ 보기](https://youtu.be/sNuTDhA3rFw) |
-| 생두 관리 및 데이터 조회 | [▶ 보기](https://youtu.be/w0LyZkPc9us) |
-| 로스팅 이력 조회 및 비교 | [▶ 보기](https://youtu.be/7LsDDGRcKKc) |
-| AI 예측 및 분석 기능 | [▶ 보기](https://youtu.be/oL_Tq4cTqVM) |
-| 자동 제어 (오토파일럿) | [▶ 보기](https://youtu.be/8h9o-T1VFhE) |
-| 그래프 설정 및 커스터마이징 | [▶ 보기](https://youtu.be/tYIIkdUVxZQ) |
-| 캘리브레이션 및 하드웨어 설정 | [▶ 보기](https://youtu.be/pGVkGRIb9SM) |
+| 시작 마법사 | [▶ 보기](https://youtu.be/qlgDZ64wkxs) |
+| 일반 로스팅 | [▶ 보기](https://youtu.be/yWpkLqNIIF8) |
+| 슬라이더 사용 설정 | [▶ 보기](https://youtu.be/sH3jsN-MPKA) |
+| 가스 압력 단위 설정 | [▶ 보기](https://youtu.be/k1qrBpALHUI) |
+| 참조 기능 (프로필 오버레이) | [▶ 보기](https://youtu.be/Z0HRGqu4CN4) |
+| 프로필 비교 | [▶ 보기](https://youtu.be/zvp-bFnCvwI) |
+| AI 예측 기능 설정 | [▶ 보기](https://youtu.be/HEtWLcyNx4E) |
+| 예열 자동화 | [▶ 보기](https://youtu.be/-d-06vbugJ4) |
+| 오토파일럿 (자동 로스팅) | [▶ 보기](https://youtu.be/JDIptR9ekEE) |
+| Giesen S7 PLC 제어 | [▶ 보기](https://youtu.be/3y0SJdnwkTQ) |
 
 ---
 
