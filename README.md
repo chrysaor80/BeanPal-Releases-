@@ -13,8 +13,8 @@ BeanPal은 커피 로스터를 위한 **무료** 로스팅 모니터링 & 제어
 
 | 플랫폼 | 파일 |
 | ------ | ---- |
-| **Windows** (10/11 x64) | [BeanPal_2.3.5_x64-setup.exe](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
-| **macOS** (Intel + Apple Silicon) | [BeanPal_2.3.5_universal.dmg](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
+| **Windows** (10/11 x64) | [BeanPal_2.3.6_x64-setup.exe](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
+| **macOS** (Intel + Apple Silicon) | [BeanPal_2.3.6_universal.dmg](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
 
 → 전체 릴리즈 이력: [Releases 페이지](https://github.com/chrysaor80/BeanPal-Releases-/releases)
 
@@ -50,13 +50,13 @@ BeanPal은 커피 로스터를 위한 **무료** 로스팅 모니터링 & 제어
 
 ---
 
-## 지원 로스터 (200개 프리셋, 81개 브랜드)
+## 지원 로스터 (210개 프리셋, 86개 브랜드)
 
 | 프로토콜 | 대표 브랜드 |
 | -------- | ---------- |
-| Modbus RTU | Proaster, Easyster, Diedrich, Kaldi, 부자로스터 외 50+ |
-| Modbus TCP | iRm, Sweet Coffee, Besca, Coffed, Atilla 외 |
-| S7 PLC | Giesen (22개 모델), Probat G/UG |
+| Modbus RTU | Proaster, Easyster, Kuban Manual, Kaldi, 부자로스터 외 50+ |
+| Modbus TCP | iRm, Sweet Coffee, Besca, Coffed, Atilla, Diedrich, Petroncini ASEM 외 |
+| S7 PLC | Giesen (22개 모델), Probat G/UG, Bühler RM 20/60-240, Brambati, Petroncini, Kuban Auto, Lilla |
 | WebSocket | Probat PIII (P05/P12/P25/P60) |
 | Kaleido | Sniper M1, M2 Pro, M6/M10 |
 | USB HID | Aillio Bullet R1 V2 |
