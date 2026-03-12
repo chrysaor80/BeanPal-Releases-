@@ -72,7 +72,7 @@ BeanPal은 커피 로스터를 위한 **무료** 로스팅 모니터링 & 제어
 | --- | ------- | ----- |
 | OS | Windows 10/11 (64-bit) | macOS 11 Big Sur 이상 |
 | RAM | 4GB 이상 | 4GB 이상 |
-| 저장공간 | 500MB | 500MB |
+| 저장공간 | 최소 500MB | 최소 500MB |
 | 아키텍처 | x64 | Intel + Apple Silicon (Universal) |
 
 ---
