@@ -20,42 +20,6 @@ BeanPal은 커피 로스터를 위한 **무료** 로스팅 모니터링 & 제어
 
 ---
 
-## ⚠️ macOS 처음 실행 시 — Gatekeeper 경고 해결
-
-앱을 처음 열면 **"Apple에서 악성 소프트웨어가 있는지 확인할 수 없습니다"** 경고가 나타날 수 있습니다.
-
-BeanPal은 Apple Developer ID로 정식 서명된 앱이지만, 첫 공증 처리 완료 전까지 이 경고가 표시됩니다. **아래 방법 중 하나로 한 번만 해제하면** 이후에는 정상 실행됩니다.
-
-### 방법 1 — 터미널 (가장 확실)
-
-```bash
-xattr -cr /Applications/BeanPal.app
-open /Applications/BeanPal.app
-```
-
-> 아무 메시지도 나타나지 않으면 성공입니다.
-
-상황에 따른 명령 변형:
-
-| 상황 | 명령 |
-| ---- | ---- |
-| Downloads 폴더에 있을 때 | `xattr -cr ~/Downloads/BeanPal.app` |
-| 권한 오류(operation not permitted)가 날 때 | `sudo xattr -cr /Applications/BeanPal.app` |
-
-### 방법 2 — 우클릭으로 열기
-
-1. Finder → 응용 프로그램에서 BeanPal 찾기
-2. 우클릭 → "열기" 선택 → 경고창에서 "열기" 클릭
-
-### 방법 3 — 시스템 설정
-
-1. BeanPal 더블 클릭 (경고 발생)
-2. 시스템 설정 → 개인정보 보호 및 보안 → "그래도 열기"
-
-> **왜 이런 경고가 나타나나요?** BeanPal은 Apple Developer ID로 서명된 안전한 앱입니다. Apple 공증(Notarization) 심사가 완료되기까지 며칠 소요되며, 그 사이 macOS가 임시로 차단합니다. 공증 완료 후 배포되는 버전부터는 이 경고 없이 바로 실행됩니다.
-
----
-
 ## 주요 기능
 
 ### 시작 마법사 — 3분 만에 로스팅 시작
