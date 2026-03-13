@@ -96,24 +96,6 @@ BT 온도 변화율(RoR)을 분석하여 건조 종료 시점을 자동으로 �
 
 ---
 
-## 🎬 데모 영상 전체
-
-| 영상 | 링크 |
-| ---- | ---- |
-| 시작 마법사 | [▶ 보기](https://youtu.be/qlgDZ64wkxs) |
-| 일반 로스팅 | [▶ 보기](https://youtu.be/yWpkLqNIIF8) |
-| 슬라이더 사용 설정 | [▶ 보기](https://youtu.be/sH3jsN-MPKA) |
-| 가스 압력 단위 설정 | [▶ 보기](https://youtu.be/k1qrBpALHUI) |
-| 참조 기능 (프로필 오버레이) | [▶ 보기](https://youtu.be/Z0HRGqu4CN4) |
-| 프로필 비교 | [▶ 보기](https://youtu.be/zvp-bFnCvwI) |
-| 온도 예측 기능 설정 | [▶ 보기](https://youtu.be/HEtWLcyNx4E) |
-| 예열 자동화 | [▶ 보기](https://youtu.be/-d-06vbugJ4) |
-| 오토파일럿 (자동 로스팅) | [▶ 보기](https://youtu.be/JDIptR9ekEE) |
-| Giesen 프리셋 생성 및 사용 | [▶ 보기](https://youtu.be/BBWBOp_it0Q) |
-| 압력 연동 밸브 제어 | [▶ 보기](https://youtu.be/P5VXlBSfDGs) |
-
----
-
 ## 지원 로스터 (210개 프리셋, 86개 브랜드)
 
 | 프로토콜 | 대표 브랜드 |
