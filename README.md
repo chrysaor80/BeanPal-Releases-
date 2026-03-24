@@ -13,8 +13,8 @@ BeanPal은 커피 로스터를 위한 **무료** 로스팅 모니터링 & 제어
 
 | 플랫폼 | 파일 |
 | ------ | ---- |
-| **Windows** (10/11 x64) | [BeanPal_2.4.0_x64-setup.exe](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
-| **macOS** (Intel + Apple Silicon) | [BeanPal_2.4.0_universal.dmg](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
+| **Windows** (10/11 x64) | [BeanPal_2.4.8_x64-setup.exe](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
+| **macOS** (Intel + Apple Silicon) | [BeanPal_2.4.8_universal.dmg](https://github.com/chrysaor80/BeanPal-Releases-/releases/latest) |
 
 > 전체 릴리즈 이력: [Releases 페이지](https://github.com/chrysaor80/BeanPal-Releases-/releases)
 
